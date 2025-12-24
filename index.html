@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- مهم للجوال -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Slider</title>
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Fira Sans', sans-serif;
+  background-image: linear-gradient(147deg, #a35050 0%, #630d0d 74%);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Slider Card */
+.blog-slider {
+  width: 95%;
+  max-width: 800px;
+  margin: auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 25px;
+  height: 400px;
+  position: relative;
+  box-shadow: 0 14px 80px rgba(34,35,58,.2);
+  touch-action: pan-y;
+  z-index: 1;
+}
+
+.blog-slider__item {
+  display: flex;
+  align-items: center;
+}
+
+/* الصورة */
+.blog-slider__img {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transform: translateX(-80px);
+  box-shadow: 0 10px 30px rgba(252,56,56,.3);
+}
+
+.blog-slider__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* المحتوى */
+.blog-slider__content {
+  padding-right: 25px;
+}
+
+.blog-slider__code {
+  color: #7b7992;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.blog-slider__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.blog-slider__text {
+  color: #4e4a67;
+  line-height: 1.5;
+}
+
+/* Pagination */
+.blog-slider__pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  background: #062744;
+  opacity: 0.3;
+  border-radius: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  width: 30px;
+  background: #fd3838;
+  opacity: 1;
+}
+
+/* الأسهم */
+.blog-slider__prev,
+.blog-slider__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: rgba(0,0,0,0.08);
+  color: #630d0d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.blog-slider__prev { left: 10px; }
+.blog-slider__next { right: 10px; }
+
+/* موبايل */
+@media (max-width: 768px) {
+  .blog-slider {
+    height: auto;
+    padding-bottom: 50px;
+  }
+
+  .blog-slider__item {
+    flex-direction: column;
+  }
+
+  .blog-slider__img {
+    transform: translateY(-40%);
+    width: 90%;
+    height: 260px;
+  }
+
+  .blog-slider__content {
+    padding: 0;
+    text-align: center;
+    margin-top: -60px;
+  }
+
+  .blog-slider__prev,
+  .blog-slider__next {
+    display: none;
+  }
+
+  .blog-slider__item .blog-slider__content[style] {
+    margin-left: 0 !important;
+  }
+}
+
+/* القلوب */
+.confetti {
+  position: fixed;
+  top: -20px;
+  border-radius: 50%;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  animation: fall linear;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- الصوت -->
+<audio id="kreama-birthday" src="C:\Users\basma\Desktop\kreama birthday\TWICE.mp3.mp3" loop></audio>
+
+<div class="blog-slider swiper">
+  <div class="swiper-wrapper">
+
+    <!-- البطاقة الأولى -->
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__img">
+        <img src="twise.jpeg">
+      </div>
+      <div class="blog-slider__content">
+        <span class="blog-slider__code">27 December 2025</span>
+        <div class="blog-slider__title">Happy Birthday Karima💓💓</div>
+        <div class="blog-slider__text">
+    Since we met in 2023 I’ve been really grateful for our friendship I remember when you used to wonder if our friendship could last more than a year Well we’ve reached that point and every moment and conversation we’ve had has been so precious and fun..
+        </div>
+      </div>
+    </div>
+
+    <!-- البطاقة الثانية -->
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__content" style="margin-left:220px;">
+        <span class="blog-slider__code">27 December 2025</span>
+        <div class="blog-slider__text">
+        ‎‏I hope you have a day full of joy laughter and great memories and a new year that brings you happiness good physical and mental health for you your family and your loved ones and may your year go smoothly without any illnesses and full of all the beautiful things you deserve I also hope you overcome all the obstacles in life and university and exams and have a great time and get fun professors lol and succeed and become the best doctor Even though honestly I don’t think you’d make a good doctor because you would kick me out of the medical oath if you did so I’ll cancel the idea of hacking you after you become a doctor lol.
+        </div>
+      </div>
+    </div>
+
+    <!-- البطاقة الثالثة -->
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__content" style="margin-left:220px;">
+        <span class="blog-slider__code">27 December 2025</span>
+        <div class="blog-slider__text">
+        ‏Thank you for being such an amazing friend and I feel so lucky to have you in my life Celebrate your day with the people you love because you truly deserve all the love🤍🤍
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="blog-slider__pagination"></div>
+  <div class="blog-slider__prev">❮</div>
+  <div class="blog-slider__next">❯</div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+new Swiper('.blog-slider', {
+  loop: true,
+  grabCursor: true,
+  simulateTouch: true,
+  pagination: {
+    el: '.blog-slider__pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.blog-slider__next',
+    prevEl: '.blog-slider__prev',
+  }
+});
+</script>
+
+<!-- تشغيل الصوت عند أول لمسة -->
+<script>
+const audio = document.getElementById('kreama-birthday');
+
+function enableAudio() {
+  audio.play().catch(() => {});
+  document.removeEventListener('click', enableAudio);
+  document.removeEventListener('touchstart', enableAudio);
+}
+
+document.addEventListener('click', enableAudio);
+document.addEventListener('touchstart', enableAudio);
+</script>
+
+<!-- القلوب -->
+<script>
+const container = document.body;
+
+function createConfetti() {
+  const el = document.createElement('div');
+  el.classList.add('confetti');
+  el.style.left = Math.random() * window.innerWidth + 'px';
+  const size = 12 + Math.random() * 12;
+  el.style.width = size + 'px';
+  el.style.height = size + 'px';
+  const colors = ['#ff4d6d','#f0e4d0','#ffb347','#bf737d','#f7a1a1'];
+  el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  el.style.animationDuration = 4 + Math.random() * 4 + 's';
+  container.appendChild(el);
+  setTimeout(() => el.remove(), 10000);
+}
+
+setInterval(createConfetti, 200);
+</script>
+
+</body>
+</html>
